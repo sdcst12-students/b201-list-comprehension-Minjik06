@@ -5,8 +5,14 @@
 def getIntegers(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the integers to the new list
-    #integers = [sum(i for i in myList if myList[i]-(int(myList[i]))==0)]
-    integers = [i+1 for i in myList]
+    """
+    3.85
+    convert to an integer or round down and see if the original value is equal to the integer value
+
+    subtract the whole number part, see if the decimal is equal to 0
+    
+    """
+    integers = [i for i in myList if round(i)-i==0]
 
 
     return integers
@@ -17,14 +23,14 @@ def getFactors(myList,number):
     # iterate through the list and add the number to the list if
     # it is a factor of the number
     #newList = [i for i in oldList if i%2==0]
-    factors = [i for i in myList if 12%myList[i]==0]
+    factors = [i for i in myList if number%i==0]
 
     return factors
 
 def getNegatives(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the negative numbers to the new list
-    negatives = [i for i in myList if myList[i]<0]
+    negatives = [i for i in myList if i<0]
 
 
     return negatives

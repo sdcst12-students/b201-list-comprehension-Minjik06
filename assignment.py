@@ -5,7 +5,9 @@
 def getIntegers(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the integers to the new list
-    integers = []
+    #integers = [sum(i for i in myList if myList[i]-(int(myList[i]))==0)]
+    integers = [i+1 for i in myList]
+
 
     return integers
 
@@ -14,20 +16,22 @@ def getFactors(myList,number):
     # number : integer
     # iterate through the list and add the number to the list if
     # it is a factor of the number
-    factors = []
+    #newList = [i for i in oldList if i%2==0]
+    factors = [i for i in myList if 12%myList[i]==0]
 
     return factors
 
 def getNegatives(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the negative numbers to the new list
-    negatives = []
+    negatives = [i for i in myList if myList[i]<0]
+
 
     return negatives
 
 
 def test1():
-  l1 = [x * .5 for x in range(20)]
+  l1 = [x * .5 for x in range(20)]   
   assert getIntegers(l1) == [i for i in range(10)]
   l2 = [x /3 for x in range(12)]
   assert getIntegers(l2) == [i for i in range(4)]
